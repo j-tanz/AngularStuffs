@@ -1,0 +1,16 @@
+<div class="container">
+        <div class="row">
+          <div class="col-12">
+                <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+                        <input formControlName="title" placeholder="Title"><br> 
+                        <input formControlName="detailText" placeholder="Details"><br>
+                        <button type="submit">Add Task</button>
+                        <button type="button" (click)="onResetForm()" class="btn btn-success mx-1">Clear Form</button><br>
+                        <button type="button" (click)="onPatchSampleText()" class="btn btn-success mx-1 my-2">patchValue() Text
+                                </button>
+                        <button type="button" (click)="onSetSampleText()" class="btn btn-success mx-1 my-2">setValue() Text
+                                </button>
+                </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-12">
+
+    <div class="card">
+      <img class="card-img-top" *ngIf="item?.imageUrl" [src]="item.imageUrl" alt="Card image cap"
+        style="max-height: 200px">
+      <div class="card-body">
+        <h5 class="card-title"> {{i + 1}}: {{item.name}}</h5>
+        <p class="card-text">
+          {{item.description}}
+        </p>
+        <app-add-to-cart-button [item]="item"></app-add-to-cart-button>
+        <a [routerLink]="[item.id]" class="btn btn-primary m-1">Open Details</a>
+      </div>
+    </div>
+
+  </div>
+</div>

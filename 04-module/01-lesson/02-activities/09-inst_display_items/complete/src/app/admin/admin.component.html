@@ -1,0 +1,32 @@
+<div class="container">
+      
+    <div class="row">
+        <div class="col-12">
+    
+        <form [formGroup]="addItemForm" (ngSubmit)="onSubmitForm()">
+            <div class="form-group">
+    
+            <label for="nameItem">Name of Item</label>
+            <input formControlName="name" type="text" class="form-control" id="nameItem" placeholder="Name of Item">
+    
+            <label for="descItem">Description</label>
+            <input formControlName="description" type="text" class="form-control" id="descItem"
+                placeholder="Description of Item">
+    
+            <label for="priceItem">Price</label>
+            <input formControlName="price" type="number" class="form-control" id="priceItem" placeholder="Price of Item">
+    
+            <label for="imageUrl">Image URL</label>
+            <input formControlName="imageUrl" type="text" class="form-control" id="imageUrl" placeholder="Image URL">
+    
+            </div>
+    
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    
+        <hr>
+    
+        </div>
+    </div>
+</div>
+      

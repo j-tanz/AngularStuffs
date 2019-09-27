@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-12">
+
+    <div class="card">
+      <img class="card-img-top" *ngIf="item?.imageUrl" [src]="item.imageUrl" alt="Card image cap" height="100">
+      <div class="card-body">
+        <h5 class="card-title"> {{i + 1}}: {{item.name}}</h5>
+        <p class="card-text">
+          {{item.description}}
+        </p>
+        <a [routerLink]="[i]" class="btn btn-primary">Open Details</a>
+      </div>
+    </div>
+
+  </div>
+</div>

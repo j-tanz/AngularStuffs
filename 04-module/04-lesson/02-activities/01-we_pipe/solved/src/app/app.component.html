@@ -1,0 +1,30 @@
+<ul>
+  <li>Welcome to {{ text1   }}!</li>
+  <li>Welcome to {{ text1 | uppercase  }}!</li>
+  <li>Welcome to {{ text1 | lowercase  }}!</li>
+  <li>Welcome to {{ text1 | titlecase  }}!</li>
+</ul>
+<ul>
+  <li>Decimal: {{decimal1 }}
+  <li>Decimal as currency: {{decimal1 | currency }}
+  <li>Decimal as number: {{decimal1 | number }}
+  <li>Decimal with number formatting: {{decimal1 | number: '1.1-3' }}
+  <li>Decimal with number formatting: {{decimal1 | number: '1.3-3' }}
+  <li>Decimal with number formatting: {{decimal1 | number: '1.1-2' }}
+  <li>Decimal with number formatting: {{decimal1 | number: '1.0-1' }}
+  <li>Decimal with number formatting: {{decimal1 | number: '3.1-3' }}
+</ul>
+<ul>
+  <li>Date: {{today}}</li>
+  <li>Date: {{today | date:'short'}}</li>
+  <li>Date: {{today | date:'medium'}}</li>
+  <li>Date: {{today | date:'long'}}</li>
+  <li>Date: {{today | date:'shortDate'}}</li>
+  <li>Date: {{today | date:'longDate'}}</li>
+  <li>Date: {{today | date:'mediumTime'}}</li>
+  <li>Date: {{today | date:'fullTime'}}</li>
+  <li>Date: {{today | date:'h:mm a yyyy'}}</li>
+  <li>Date chained: {{today | date:'fullDate' | uppercase}}</li>
+</ul>
+
+<router-outlet></router-outlet>

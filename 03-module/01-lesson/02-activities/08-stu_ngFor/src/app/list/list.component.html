@@ -1,0 +1,9 @@
+<!-- Step One: Show students that we can display the whole Array -->
+{{ tasks }}
+
+<!-- {{ *ngFor="let task of tasks" }} -->
+
+<ul class="list-group">
+    <li *ngFor="let task of tasks" class="list-group-item">{{ task }}</li>
+</ul>
+

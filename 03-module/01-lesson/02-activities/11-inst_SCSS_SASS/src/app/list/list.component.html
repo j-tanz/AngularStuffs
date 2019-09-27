@@ -1,0 +1,12 @@
+<ul class="list-group">
+    <li *ngFor="let task of tasks" class="list-group-item">{{ task }}</li>
+</ul>
+
+<!-- Step One: -->
+<!-- <button *ngIf="displayList" type="button" class="btn btn-primary">Primary</button> -->
+
+<!-- Step Two-->
+<!-- <button *ngIf="displayList" (click)="displayList = !displayList" type="button" class="btn btn-primary">Primary</button>-->
+
+<!-- Step Three -->
+<button *ngIf="displayList" (click)="onToggleDisplay()" type="button" class="btn btn-primary">Primary</button>

@@ -1,0 +1,10 @@
+<h1>{{firstDate.format("LLLL")}}</h1>
+
+<!-- use of getters to display date components. Note: Month starts at the 0 index. -->
+<h1>Month: {{firstDate.month()}}</h1>
+<h1>Day: {{firstDate.date()}}</h1>
+<h1>Year: {{firstDate.year()}}</h1>
+
+<button (click)="adjustYear()">Change Year</button>
+<button (click)="adjustMonth()">Change Month</button>
+<button (click)="adjustDay()">Change Day</button>

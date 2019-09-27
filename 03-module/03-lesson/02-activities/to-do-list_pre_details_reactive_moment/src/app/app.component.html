@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-6">
+      <app-list></app-list>
+    </div>
+    <div class="col-6">
+      <app-list></app-list>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12">
+      <p>Notice: When editing a task, the other component sees the changes beccause ListComponent.tasks is set to as a
+        reference to the TasksService.tasks. However, when deleting a task in a list, the other copmonent doesn't update
+        because it doesn't know that the task was deleted.<br>Observables and EventEmitters can be used to fix this by
+        emiting
+        a change when a task is deleted.</p>
+
+    </div>
+  </div>
+</div>

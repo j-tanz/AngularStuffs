@@ -1,0 +1,52 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-12">
+      <h4>Admin</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+
+      <form [formGroup]="addItemForm" (ngSubmit)="onSubmitForm()">
+        <div class="form-group">
+
+          <label for="nameItem">Name of Item</label>
+          <input formControlName="name" type="text" class="form-control" id="nameItem" placeholder="Name of Item">
+
+          <label for="descItem">Description</label>
+          <input formControlName="description" type="text" class="form-control" id="descItem"
+            placeholder="Description of Item">
+
+          <label for="priceItem">Price</label>
+          <input formControlName="price" type="number" class="form-control" id="priceItem" placeholder="Price of Item">
+
+          <label for="imageUrl">Image URL</label>
+          <input formControlName="imageUrl" type="text" class="form-control" id="imageUrl" placeholder="Image URL">
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <hr>
+
+      <div class="row">
+        <div class="col-12">
+
+          <div class="row mb-2" *ngFor="let item of items; let i = index">
+            <div class="col-6">
+              {{i + 1}}: {{item.name}}
+            </div>
+            <div class="col-6">
+              <button class="btn btn-danger float-right" (click)="onDeleteItem(i)">X</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

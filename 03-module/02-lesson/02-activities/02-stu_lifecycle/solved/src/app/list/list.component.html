@@ -1,0 +1,6 @@
+<ul class="list-group">
+    <li *ngFor="let task of tasks" class="list-group-item">{{ task }}</li>
+</ul>
+
+<button *ngIf="displayList" (mouseover)="onToggleDisplay()" type="button" class="btn btn-primary">Toggle Display</button>
+<img [src]="imgUrl" >

@@ -1,0 +1,36 @@
+<input [(ngModel)]="newTaskText" class="form-control">
+<button (click)="onCreateNewTask(newTaskText, false)" class="btn btn-success">Add Task</button>
+<p>{{tasks.length}}</p>
+
+<div *ngIf="displayList" class="row">
+    <div class="col-6">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let task of tasks; let i = index">
+                <div class="row">
+                    <div class="col-6">
+                        <p *ngIf="!taskIdsBeingEdited[i]">{{task.title}}</p>
+                        <input *ngIf="taskIdsBeingEdited[i]" [(ngModel)]="task.title">
+                    </div>
+                    <div class="col-6">
+                        <button *ngIf="!taskIdsBeingEdited[i]" class="btn-danger float-right mx-1"
+                            (click)="onDeleteTask(i)">X</button>
+                        <button *ngIf="!taskIdsBeingEdited[i]" class="btn-info float-right"
+                            (click)="onStartEditTask(i)">Edit</button>
+                        <button *ngIf="taskIdsBeingEdited[i]" class="btn-info float-right"
+                            (click)="onSaveEditTask(i)">Save</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- task detail -->
+    <div class="col-6" *ngIf="taskBeingDisplayed">
+        <h4>{{taskBeingDisplayed.title}}</h4>
+    </div>
+    <!-- end task detail -->
+</div>
+
+
+
+<button (click)="onToggleDisplay()" type="button" class="btn btn-primary">Toggle Display</button>
+<img [src]="imgUrl">

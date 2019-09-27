@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12">
+          <!-- the ? below is the "elvis" operator. it checks for whether title (in this case) is defined before trying to access .value -->
+          <!-- in this way, you won't run into "cannot read property ____ of undefined" errors and don't have to nest a ton of *ngIfs -->
+          <!-- this could be used as: myObject?.prop1?.prop2?.prop3?.prop4?.prop5 -->
+          <h4>New Task: {{title?.value}}</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+
+          <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+            <input formControlName="title" placeholder="Title"><br>
+            <p>Errors: {{taskForm?.controls?.title?.errors | json}}</p><br>
+            <textarea rows="6" class="mt-2" formControlName="detailText" placeholder="Details"></textarea><br>
+            <p>Errors: {{taskForm?.controls?.detailText?.errors | json}}</p><br>
+
+            <!-- !!!Important! the type="submit" is actually the default. If a button in a formGroup is *not* set to type="button", the HTML will infer it as a submit button and clicking it will submit the form. Thus, we must add type="button" to our Clear Form button to designate it *not* as a submit button -->
+            <button type="submit" class="btn btn-success mx-1">Add Task</button>
+            <button type="button" (click)="onResetForm()" class="btn btn-success mx-1">Clear Form</button><br>
+            <button type="button" (click)="onPatchSampleTitle()" class="btn btn-success mx-1 my-2">patchValue() Title
+            </button>
+            <button type="button" (click)="onPatchSampleText()" class="btn btn-success mx-1 my-2">patchValue() Text
+            </button>
+            <button type="button" (click)="onSetSampleText()" class="btn btn-success mx-1 my-2">setValue() Text
+            </button>
+          </form>
+
+        </div>
+
+        <div class="col-12 mt-5">
+          <h5>Form Info</h5>
+          <p>Status: {{taskForm.status}}<br>
+            Pristine: {{taskForm.pristine}}<br>
+            Dirty: {{taskForm.dirty}}<br>
+            Touched: {{taskForm.touched}}<br>
+            Errors: {{taskForm.errors}}<br>
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

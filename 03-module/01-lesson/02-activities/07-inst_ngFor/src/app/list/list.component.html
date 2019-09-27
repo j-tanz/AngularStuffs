@@ -1,0 +1,9 @@
+<!-- Step One: Show students that we can display the whole Array -->
+{{ tasks }}
+
+<!-- Step Two: Show students how to print out each individual task in our array of tasks -->
+
+<ul class="list-group">
+    <li *ngFor="let task of tasks" class="list-group-item">{{ task }}</li>
+</ul>
+
